@@ -1,9 +1,9 @@
-#Francisco Zavalza 62706684
 from pymongo import MongoClient
 from collections import defaultdict
 import json, math
 
 def abbreviation(search):
+    ''' return the abbreviation of a search query'''
     my_string = ""
     for i in search:
         my_string += i[0]
@@ -29,6 +29,7 @@ def match(bookkeeping,search_string, matches):
     return counter
 
 def main():
+    ''' Access PyMongo and make queries using user input '''
     client = MongoClient()
     db_terms = client['SearchEngine']['terms']
     while(1):
